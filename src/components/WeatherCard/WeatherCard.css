@@ -13,6 +13,15 @@
   position: absolute;
   top: 20px;
   left: 16px;
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 36px;
+  leading-trim: NONE;
+  line-height: 40px;
+  letter-spacing: 0%;
+  vertical-align: middle;
+  color: rgba(255, 255, 255, 1);
 }
 
 .weather-card__image {

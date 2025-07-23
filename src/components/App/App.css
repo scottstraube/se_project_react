@@ -7,3 +7,25 @@
   margin: 0 auto;
   padding: 0 20px;
 }
+
+.modal__label {
+  margin-bottom: 8px;
+}
+
+.modal__input {
+  width: 100%;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 1px solid black;
+  height: 24px;
+  margin-bottom: 24px;
+}
+
+.modal__legend {
+  margin-bottom: 12px;
+}
+
+.modal__radio-input {
+  margin-right: 11px;
+}

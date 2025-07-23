@@ -10,10 +10,26 @@
 
 .header__date-and-location {
   margin: 0;
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 24px;
+  letter-spacing: 0%;
 }
 
 .header__add-clothes-btn {
   margin: 0 20px 0 auto;
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 24px;
+  letter-spacing: 0%;
+  border: none;
+  background: none;
 }
 
 .header__user-container {
@@ -24,4 +40,11 @@
 
 .header__username {
   margin: 0;
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  leading-trim: NONE;
+  line-height: 100%;
+  letter-spacing: 0%;
 }
