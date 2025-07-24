@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import { coordinates, APIkey } from "../../utils/constants";
+import { getWeather, filterWeatherData } from "../../utils/weatherApi";
+
 import Header from "../Header/Header";
 import Main from "../Main/Main";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import ItemModal from "../ItemModal/ItemModal";
-import { coordinates, APIkey } from "../../utils/constants";
-import { getWeather, filterWeatherData } from "../../utils/weatherApi";
 import Footer from "../Footer/Footer";
+
+import "./App.css";
 
 function App() {
   const [weatherData, setWeatherData] = useState({
@@ -36,7 +38,9 @@ function App() {
         const filteredData = filterWeatherData(data);
         setWeatherData(filteredData);
       })
-      .catch(console.error);
+      .catch((error) => {
+        console.error("Failed to fetch weather data:", error);
+      });
   }, []);
 
   return (
@@ -54,6 +58,7 @@ function App() {
         <label htmlFor="name" className="modal__label">
           Name
           <input
+            required
             type="text"
             className="modal__input"
             id="name"
