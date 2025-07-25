@@ -11,7 +11,11 @@ function ItemModal({ activeModal, handleCloseClick, card }) {
           type="button"
           className="modal__close"
         >
-          <img src={closeIcon} alt="" className="modal__close-btn" />
+          <img
+            src={closeIcon}
+            alt="Close button"
+            className="modal__close-btn"
+          />
         </button>
         <img src={card.link} alt={card.name} className="modal__image" />
         <div className="modal__footer">
