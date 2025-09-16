@@ -5,6 +5,8 @@
   justify-content: center;
   border: 1px solid rgba(0, 0, 0, 0.3);
   border-radius: 19px;
+  cursor: pointer;
+  transition: all 0.25s;
 }
 
 .card__name {
@@ -21,10 +23,19 @@
   background: rgba(255, 255, 255, 1);
   border-radius: 4px;
   color: rgba(0, 0, 0, 0.6);
+  transition: all 0.25s;
 }
 
 .card__image {
   width: 100%;
   border-radius: 19px;
   border: 1px;
+}
+
+/* Hover effects not clear in Figma - these seemed consistent with other items? */
+.card:hover .card__name {
+  color: black;
+}
+.card:hover {
+  border: 1px solid black;
 }

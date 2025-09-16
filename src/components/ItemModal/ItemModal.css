@@ -15,14 +15,18 @@
   font-weight: 700;
   font-style: Bold;
   font-size: 20px;
-  leading-trim: NONE;
   line-height: 24px;
   letter-spacing: 0%;
   margin-left: 32px;
 }
 
+.modal__caption {
+  font-size: 20px;
+}
+
 .modal__weather {
   margin-bottom: 32px;
+  font-size: 20px;
 }
 
 .modal__close {
@@ -31,9 +35,34 @@
   position: absolute;
   top: 26px;
   right: 26px;
+  cursor: pointer;
+}
+
+.modal__close:hover {
+  filter: brightness(0.2);
 }
 
 .modal__close-btn {
   width: 16px;
   height: 16px;
+}
+
+.modal__delete-btn {
+  position: absolute;
+  right: 32px;
+  bottom: 73.78px;
+  font-family: Cabinet Grotesk;
+  font-weight: 700;
+  font-style: Bold;
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: 0%;
+  color: #ff4d00;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.modal__delete-btn:hover {
+  filter: brightness(0.9);
 }
