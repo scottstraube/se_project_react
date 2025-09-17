@@ -46,10 +46,10 @@ function App() {
   };
 
   const handleCardDelete = () => {
-    removeItem(selectedCard.id)
+    removeItem(selectedCard._id)
       .then(() => {
         setClothingItems((prevItems) =>
-          prevItems.filter((item) => item.id !== selectedCard.id)
+          prevItems.filter((item) => item._id !== selectedCard._id)
         );
         closeActiveModal();
       })
@@ -67,7 +67,7 @@ function App() {
 
     addItem(newCardData)
       .then((newItem) => {
-        setClothingItems([...clothingItems, newItem]);
+        setClothingItems([newItem, ...clothingItems]);
         closeActiveModal();
       })
       .catch((error) => {

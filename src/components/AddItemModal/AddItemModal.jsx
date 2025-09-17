@@ -1,9 +1,16 @@
+import { useEffect } from "react";
 import ModalWithForm from "../ModalWithForm/ModalWithForm";
 import { useForm } from "../../hooks/useForm";
 
 const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
   const defaultValues = { name: "", link: "", weatherType: "" };
-  const { values, handleChange } = useForm(defaultValues);
+  const { values, handleChange, setValues } = useForm(defaultValues);
+
+  useEffect(() => {
+    if (isOpen) {
+      setValues(defaultValues);
+    }
+  }, [isOpen, setValues]);
 
   function handleSubmit(evt) {
     evt.preventDefault();
@@ -31,11 +38,12 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
           onChange={handleChange}
         />
       </label>
-      <label htmlFor="imgUrl" className="modal__label" id="name">
+      <label htmlFor="imgUrl" className="modal__label" id="imgUrl">
         Image
         <input
           type="url"
           name="link"
+          required
           className="modal__input"
           id="imgUrl"
           placeholder="Image URL"
@@ -52,6 +60,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
             id="hot"
             name="weatherType"
             value="hot"
+            required
             onChange={handleChange}
           />
           Hot

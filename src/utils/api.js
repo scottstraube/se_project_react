@@ -13,7 +13,16 @@ export const getItems = () => {
     headers: {
       "Content-Type": "application/json",
     },
-  }).then(checkResponse);
+  })
+    .then(checkResponse)
+    .then((items) => {
+      return items.map((item) => {
+        return {
+          ...item,
+          link: item.imageUrl,
+        };
+      });
+    });
 };
 
 export const addItem = ({ name, imageUrl, weather }) => {
