@@ -38,7 +38,7 @@ const AddItemModal = ({ isOpen, onAddItem, handleCloseClick }) => {
           onChange={handleChange}
         />
       </label>
-      <label htmlFor="imgUrl" className="modal__label" id="imgUrl">
+      <label htmlFor="link" className="modal__label" id="imgUrl">
         Image
         <input
           type="url"

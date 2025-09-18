@@ -1,6 +1,6 @@
 const baseUrl = "http://localhost:3001";
 
-const checkResponse = (res) => {
+export const checkResponse = (res) => {
   if (res.ok) {
     return res.json();
   }
@@ -13,16 +13,7 @@ export const getItems = () => {
     headers: {
       "Content-Type": "application/json",
     },
-  })
-    .then(checkResponse)
-    .then((items) => {
-      return items.map((item) => {
-        return {
-          ...item,
-          link: item.imageUrl,
-        };
-      });
-    });
+  }).then(checkResponse);
 };
 
 export const addItem = ({ name, imageUrl, weather }) => {
@@ -36,7 +27,14 @@ export const addItem = ({ name, imageUrl, weather }) => {
       imageUrl,
       weather,
     }),
-  }).then(checkResponse);
+  })
+    .then(checkResponse)
+    .then((newItem) => {
+      return {
+        ...newItem,
+        link: newItem.imageUrl,
+      };
+    });
 };
 
 export const removeItem = (id) => {

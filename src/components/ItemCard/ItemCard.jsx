@@ -13,6 +13,7 @@ function ItemCard({ item, onCardClick }) {
         className="card__image"
         src={item.link}
         alt={item.name}
+        key={item._id}
       ></img>
     </li>
   );

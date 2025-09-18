@@ -67,7 +67,11 @@ function App() {
 
     addItem(newCardData)
       .then((newItem) => {
-        setClothingItems([newItem, ...clothingItems]);
+        // Transform and prepend the new item with correct ID
+        setClothingItems([
+          { ...newItem, link: newItem.imageUrl },
+          ...clothingItems,
+        ]);
         closeActiveModal();
       })
       .catch((error) => {
@@ -103,7 +107,18 @@ function App() {
 
     getItems()
       .then((items) => {
-        setClothingItems(items);
+        // First, transform the items to include the 'link' property
+        const mappedItems = items.map((item) => {
+          return {
+            ...item,
+            link: item.imageUrl,
+          };
+        });
+
+        // Then, reverse the array to put the newest items at the top
+        const reversedItems = mappedItems.reverse();
+
+        setClothingItems(reversedItems);
       })
       .catch((error) => {
         console.error("Failed to fetch clothing items:", error);
